@@ -43,23 +43,22 @@ public class Main {
         bw.flush();
     }
 
-    public static int dfs(int root){
+    public static int dfs(int root) {
         visited[root] = true;
         stack.addLast(root);
 
         while(!stack.isEmpty()){
             for (int i = 0; i < N; i++) {
-                if(matrix[root][i] == 1) {
+                if(matrix[root][i] == 1 && !visited[i]) {
                     stack.addLast(i);
                     visited[i] = true;
-
                     matrix[root][i] = 0;
                     matrix[i][root] = 0;
                 }
             }
             root = stack.removeLast();
         }
-
+        
         return 1;
     }
 
