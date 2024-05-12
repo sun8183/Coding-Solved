@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -22,7 +21,6 @@ public class Main {
     static int cur_c;
     static int[] current;
     static boolean[][] visited;
-    static ArrayList<int[]> tomato = new ArrayList<>();
     static int answer = 0;
 
     public static void main(String[] args) throws IOException {
@@ -42,11 +40,9 @@ public class Main {
             for (int j = 0; j < N; j++) {
                 matrix[i][j] = Integer.parseInt(st.nextToken());
 
-                if(matrix[i][j] == 1) tomato.add(new int[]{i, j});
+                if(matrix[i][j] == 1) queue.add(new int[]{i, j});
             }
         }
-
-        queue.addAll(tomato);
 
         while(!queue.isEmpty()){
             current = queue.removeFirst();
