@@ -8,21 +8,27 @@ public class Main {
     static int N;
     static int M;
     static String target;
+    static String str;
     static int answer;
 
     public static void main(String[] args) throws IOException {
         N = Integer.parseInt(br.readLine());
         M = Integer.parseInt(br.readLine());
-        StringBuilder sb = new StringBuilder("I");
         target = br.readLine();
 
-        for (int i = 0; i < N; i++) {
-            sb.append("OI");
-        }
-
-        for (int i = 0; i <= target.length() - sb.toString().length(); i++) {
-            String s = target.substring(i, i+sb.toString().length());
-            if(s.equals(sb.toString())) answer++;
+        int cnt = 0;
+        for (int i = 1; i < M-1;) {
+            if(target.charAt(i) == 'O' && target.charAt(i+1) == 'I'){
+                cnt++;
+                if(cnt == N){
+                    if(target.charAt(i-(cnt*2-1)) == 'I') answer++;
+                    cnt--;
+                }
+                i+=2;
+            }else{
+                cnt = 0;
+                i++;
+            }
         }
 
         bw.write(String.valueOf(answer));
