@@ -25,7 +25,7 @@ public class Main {
             path[i] = 1000;
         }
 
-        for (int i = 0; i < N+M; i++) {     // 뱀따로 사다리 따로 저장
+        for (int i = 0; i < N+M; i++) {
             s = br.readLine();
             st = new StringTokenizer(s);
             int x = Integer.parseInt(st.nextToken());
