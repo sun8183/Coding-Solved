@@ -9,7 +9,7 @@ public class Main {
     static int N;
     static int[] bridge;
     static int[] city;
-    static int answer = 0;
+    static long answer = 0;
 
     public static void main(String[] args) throws IOException {
         N = Integer.parseInt(br.readLine());
@@ -30,7 +30,7 @@ public class Main {
             city[i] = Integer.parseInt(st.nextToken());
         }
 
-        int min = city[0];
+        long min = city[0];
 
         for (int i = 0; i < N-1; i++) {
             if(min > city[i]){
