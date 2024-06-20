@@ -10,9 +10,9 @@ public class Main {
     static int N;
     static int[] Left;
     static int[] Right;
-    static HashMap<Integer, Integer> alpha = new HashMap<Integer, Integer>();
+    static HashMap<Integer, Integer> alpha = new HashMap<>();
 
-    static final int ROOT = 65; // 문제에서 항상 A가 루트노드 
+    static final int ROOT = 65; // 문제에서 항상 A가 루트노드
 
     public static void main(String[] args) throws IOException {
         N = Integer.parseInt(br.readLine());
@@ -30,16 +30,11 @@ public class Main {
             char a1 = st.nextToken().charAt(0);
             char a2 = st.nextToken().charAt(0);
 
-            if(a1 != '.' && a2 != '.'){
-                Left[i] = a1;
-                Right[i] = a2;
-            }else{
-                Left[i] = a1;
-                Right[i] = a2;
+            Left[i] = a1;
+            Right[i] = a2;
 
-                if(a1 == '.') Left[i] = -1;
-                if(a2 == '.') Right[i] = -1;
-            }
+            if(a1 == '.') Left[i] = -1;
+            if(a2 == '.') Right[i] = -1;
         }
 
         Preorder(ROOT);
@@ -50,7 +45,7 @@ public class Main {
 
         bw.flush();
     }
-    
+
     // 트리의 전위순회
     public static void Preorder(int current) throws IOException {
         if(current == -1) return;
