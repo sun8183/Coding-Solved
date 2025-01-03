@@ -1,6 +1,6 @@
 <blockquote>
 <p>
-  <code>임태양 Java Language 1일 1문제 challenge</code>
+  <code>임태양 Java Language 1일 1문제 challenge!</code>
 </p>
 </blockquote>
 
